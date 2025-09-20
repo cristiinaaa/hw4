@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HW4 – Table Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* GLOBAL LAYOUT TABLE (no borders) */
+    table.layout { width: 100%; border-collapse: collapse; }
+    table.layout, table.layout td { border: none; }
+    td { vertical-align: top; }
+
+    /* Regions */
+    .header { padding: 16px; text-align: center; font-size: 1.4rem; font-weight: 600; }
+    .nav    { width: 220px; padding: 12px; }
+    .main   { padding: 16px; }
+    .footer { padding: 12px; text-align: center; font-size: 0.95rem; }
+
+    /* Nav menu */
+    .menu { list-style: none; padding-left: 0; margin: 0; }
+    .menu li { margin: 8px 0; }
+    .menu a { text-decoration: none; }
+    .menu a:hover { text-decoration: underline; }
+
+    /* Section spacing */
+    section { margin: 0 0 32px 0; }
+    .back { display: inline-block; margin-top: 12px; }
+
+    /* INNER TABLE (WITH BORDERS) */
+    table.inner { border-collapse: collapse; width: 100%; max-width: 720px; }
+    table.inner th, table.inner td { border: 1px solid #333; padding: 8px; text-align: left; }
+    table.inner th { background: #f1f1f1; }
+
+    /* Simple colors (match your Excel mockup if you want) */
+    .header { background:rgb(208, 172, 243); }
+    .nav    { background:rgb(144, 190, 248); }
+    .footer { background:rgb(246, 178, 231); }
+  </style>
+</head>
+<body id="top">
+  <!-- GLOBAL LAYOUT TABLE -->
+  <table class="layout" role="presentation">
+    <tr>
+      <td colspan="2" class="header">
+        My HW4 Page (Table-Based Layout)
+      </td>
+    </tr>
+    <tr>
+      <!-- NAV COLUMN -->
+      <td class="nav">
+        <nav aria-label="Main">
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#school">School</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </td>
+
+      <!-- MAIN COLUMN -->
+      <td class="main">
+        <section id="home">
+          <h2>Home</h2>
+          <p>Welcome! This HW4 page uses a global <b>table layout</b> (no borders). The left menu links to each section via anchors.</p>
+          <a class="back" href="#top">Back to Top</a>
+          <hr>
+        </section>
+
+        <section id="school">
+          <h2>School</h2>
+          <p>Here is my sample weekly schedule shown in an <b>inner table with borders</b> (per assignment):</p>
+
+          <!-- INNER TABLE WITH BORDERS -->
+          <table class="inner" aria-label="Weekly Schedule">
+            <thead>
+              <tr>
+                <th>Day</th><th>Course</th><th>Start</th><th>End</th><th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Mon</td><td>CS3873</td><td>09:00</td><td>10:15</td><td>ENG 201</td></tr>
+              <tr><td>Tue</td><td>CS3733, CS3773, CS4413, CS3793</td><td>10:30</td><td>11:45</td><td>SCI 110</td></tr>
+              <tr><td>Wed</td><td>CS3873</td><td>09:00</td><td>10:15</td><td>LIB 3F</td></tr>
+              <tr><td>Thu</td><td>CS3733, CS3773, CS4413, CS3793</td><td>11:00</td><td>12:15</td><td>ENG 305</td></tr>
+              <tr><td>Fri</td><td>No classes</td><td>13:30</td><td>14:45</td><td>CS LAB</td></tr>
+            </tbody>
+          </table>
+
+          <a class="back" href="#top">Back to Top</a>
+          <hr>
+        </section>
+
+        <section id="work">
+          <h2>Work</h2>
+          <p>I’m currently focused on coursework and projects. My goal is a role in data analysis.</p>
+          <a class="back" href="#top">Back to Top</a>
+          <hr>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:you@example.com">cristinaaee20@gmail.com</a></p>
+          <a class="back" href="#top">Back to Top</a>
+        </section>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="footer">
+        &copy; 2025 Cristina Esteva
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
